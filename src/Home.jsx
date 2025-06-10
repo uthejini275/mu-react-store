@@ -1,11 +1,10 @@
-
 import React from "react";
 import "./Home.css";
 import { AppContext } from "./App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
-  const {cart,setCart} = useContext(AppContext)
+  const {cart,setCart,email} = useContext(AppContext)
   const products = [
     {
       id: 1,
@@ -37,6 +36,7 @@ export default function Home() {
       price: obj.price,
       desc: obj.desc,
       qty: 1,
+      email:email,
     });
     Navigate("/cart");
   };
